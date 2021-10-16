@@ -1,0 +1,21 @@
+
+{
+  "name": "alexgrizzled/access-attempts",
+  "description": "Access attempts",
+  "keywords": ["access","attempts"],
+  "type": "symfony-service",
+  "license": "proprietary",
+  "minimum-stability": "stable",
+  "version": "5.3",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.4",
+    "symfony/framework-bundle": "^5.3",
+    "symfony/lock": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "AlexGrizzled\\": "src/"
+    }
+  }
+}
