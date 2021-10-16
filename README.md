@@ -18,6 +18,9 @@ parameters:
     
     login.email.attempt.max: 5
     login.email.attempt.interval: 600
+
+services:
+    AlexGrizzled\Service\AccessAttempts: ~
 ```
 
 ```php
@@ -73,6 +76,9 @@ parameters:
     
     login.day.attempt.max: 6
     login.day.attempt.interval: 86400
+
+services:
+    AlexGrizzled\Service\AccessAttempts: ~
 ```
 
 ```php
