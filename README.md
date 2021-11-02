@@ -112,12 +112,12 @@ class SecurityController extends AbstractController
         }
         
         if (false === $accessAttempts->has('login.ip', $ip)) {
+            // Суммируем неудачную попытку
+            $accessAttempts->has('login.day', $ip)
+            
             // Бан на 5 минут
             throw new Exception('Попозже попробуйте повторить');
         }
-        
-        // Суммируем попытку
-        $accessAttempts->has('login.day', $ip)
         
         // ...
     }
