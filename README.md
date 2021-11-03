@@ -104,15 +104,16 @@ class SecurityController extends AbstractController
         
         $ip = $request->getClientIp();
         
-        // Проверка доступа без суммирования попытки
+        // Проверка попыток за день, без суммирования
         if (false === $accessAttempts->has('login.day', $ip, false)) {
             // Бан на 24 часа
             // В этом месте можно и в фаервол правило записать, но это другая история ;)
             throw new Exception('Ну очень много попыток.');
         }
         
+        // Проверка попытки за последнии 5 минут
         if (false === $accessAttempts->has('login.ip', $ip)) {
-            // Суммируем неудачную попытку
+            // Суммируем неудачную попытку за день
             $accessAttempts->has('login.day', $ip)
             
             // Бан на 5 минут
